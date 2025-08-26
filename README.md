@@ -1,6 +1,8 @@
 # courier-management-system
 **Courier Management System (Java + MySQL)**
-📌 Project Overview
+
+
+**📌 Project Overview**
 
 The Courier Management System is a Java application integrated with MySQL database that helps to manage courier operations digitally. The system allows administrators and staff to handle courier booking, parcel tracking, customer records, and delivery updates efficiently. This project reduces manual work and improves service accuracy in courier companies.
 
