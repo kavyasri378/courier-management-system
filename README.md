@@ -1,10 +1,10 @@
 # courier-management-system
-Courier Management System (Java + MySQL)
+**Courier Management System (Java + MySQL)**
 📌 Project Overview
 
 The Courier Management System is a Java application integrated with MySQL database that helps to manage courier operations digitally. The system allows administrators and staff to handle courier booking, parcel tracking, customer records, and delivery updates efficiently. This project reduces manual work and improves service accuracy in courier companies.
 
-✨ Features
+**✨ Features**
 
 🔑 Secure Login System (Admin/Staff)
 
@@ -18,7 +18,7 @@ The Courier Management System is a Java application integrated with MySQL databa
 
 📦 Update Delivery Status
 
-🛠️ Technologies Used
+**🛠️ Technologies Used**
 
 Frontend: Java (Swing / AWT or JSP/Servlets)
 
@@ -30,7 +30,7 @@ IDE Used: Eclipse / IntelliJ IDEA / VS Code
 
 Version Control: Git & GitHub
 
-⚙️ Installation & Setup
+**⚙️ Installation & Setup**
 
 Clone this repository:
 
@@ -80,7 +80,7 @@ Delivery Update → Admin/staff update status (In-transit / Delivered).
 
 Reports → Generate daily/weekly courier reports for analysis.
 
-🔮 Future Enhancements
+**🔮 Future Enhancements**
 
 🌐 Online booking and payment gateway
 
