@@ -1,23 +1,44 @@
 package model;
 
-public class Branch {
-    private int branch_id;
-    private String branch_name;
+public class Branch 
+{
+    //declaring of variables
+    private int branchId;
+    private String branchName;
     private String location;
-
-    public Branch(int branch_id, String branch_name, String location) {
-        this.branch_id = branch_id;
-        this.branch_name = branch_name;
+   //constructor
+    public Branch(int branchId, String branchName, String location) 
+    {
+        this.branchId = branchId;
+        this.branchName = branchName;
         this.location = location;
     }
 
     // Getters & Setters
-    public int getBranch_id() { return branch_id; }
-    public void setBranch_id(int branch_id) { this.branch_id = branch_id; }
+    public int getBranchId() 
+    { 
+        return branchId; 
+    }
+    public void setBranchId(int branchId) 
+    { 
+        this.branchId = branchId; 
+    }
 
-    public String getBranch_name() { return branch_name; }
-    public void setBranch_name(String branch_name) { this.branch_name = branch_name; }
+    public String getBranchName() 
+    { 
+        return branchName;
+     }
+    public void setBranchName(String branchName) 
+    { 
+        this.branchName = branchName; 
+    }
 
-    public String getLocation() { return location; }
-    public void setLocation(String location) { this.location = location; }
+    public String getLocation()
+     { 
+        return location; 
+    }
+    public void setLocation(String loc) 
+    { 
+        this.location = loc;
+    }
 }
