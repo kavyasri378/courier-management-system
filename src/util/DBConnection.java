@@ -2,31 +2,29 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBConnection {
-    public static void main(String[] args) {
-        Connection conn = null;
+
+    // MySQL database URL, username, password
+    private static final String URL = "jdbc:mysql://localhost:3306/courierdb";
+    private static final String USER = "root";            // உங்கள் MySQL username
+    private static final String PASSWORD = "Kavya@2006Kavya";  // உங்கள் MySQL password
+
+    // Method to get connection
+    public static Connection getConnection() {
         try {
-            // Load Driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // DB URL
-            String url = "jdbc:mysql://localhost:3306/courierdb?useSSL=false&serverTimezone=UTC";
-            String user = "root";
-            String password = "Kavya@2006Kavya";
-            // Connection
-            conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Connection Successful!");
-
-        } catch (Exception e) {
+            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Database Connected Successfully!");
+            return con;
+        } catch (SQLException e) {
             System.out.println("Connection Failed: " + e.getMessage());
-        } finally {
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+            return null;
         }
+    }
+
+    // Test main method
+    public static void main(String[] args) {
+        getConnection();
     }
 }
