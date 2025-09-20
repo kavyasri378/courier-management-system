@@ -8,33 +8,37 @@ import model.Branch;
 
 public class BranchDAO {
 
-    // Add a new branch
+    // Adding a new branch details
     public void addBranch(Branch b) {
         String sql = "INSERT INTO Branch(branch_id, branch_name, location) VALUES(?,?,?)";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pst = conn.prepareStatement(sql)) {
-            pst.setInt(1, b.getBranch_id());
-            pst.setString(2, b.getBranch_name());
+             PreparedStatement pst = conn.prepareStatement(sql)) 
+        {
+            pst.setInt(1, b.getBranchId());
+            pst.setString(2, b.getBranchName());
             pst.setString(3, b.getLocation());
             pst.executeUpdate();
             System.out.println("Branch Added");
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    // Update a branch by ID
+    // Updating  a branch by ID
     public void updateBranch(Branch b) {
         String sql = "UPDATE Branch SET branch_name=?, location=? WHERE branch_id=?";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pst = conn.prepareStatement(sql)) {
-            pst.setString(1, b.getBranch_name());
+             PreparedStatement pst = conn.prepareStatement(sql)) 
+        {
+            pst.setString(1, b.getBranchName());
             pst.setString(2, b.getLocation());
-            pst.setInt(3, b.getBranch_id());
+            pst.setInt(3, b.getBranchId());
             int rows = pst.executeUpdate();
-            if (rows > 0) System.out.println("Branch Updated");
+            if (rows > 0) System.out.println("Branch details are Updated  successfully");
             else System.out.println("Branch not found");
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             System.out.println(e);
         }
     }
@@ -46,9 +50,10 @@ public class BranchDAO {
              PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, branch_id);
             int rows = pst.executeUpdate();
-            if (rows > 0) System.out.println("Branch Deleted");
+            if (rows > 0) System.out.println("Branch Deleted successfully");
             else System.out.println("Branch not found");
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             System.out.println(e);
         }
     }
@@ -62,10 +67,10 @@ public class BranchDAO {
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 return new Branch(rs.getInt("branch_id"),
-                                  rs.getString("branch_name"),
-                                  rs.getString("location"));
+                    rs.getString("branch_name"),rs.getString("location"));
             }
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             System.out.println(e);
         }
         return null;
@@ -80,10 +85,10 @@ public class BranchDAO {
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 list.add(new Branch(rs.getInt("branch_id"),
-                                    rs.getString("branch_name"),
-                                    rs.getString("location")));
+                rs.getString("branch_name"),rs.getString("location")));
             }
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             System.out.println(e);
         }
         return list;

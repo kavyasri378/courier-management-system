@@ -22,7 +22,13 @@ public class CourierMenu {
             int choice = sc.nextInt();
             sc.nextLine(); // consume newline
 
-            switch (choice) {
+            switch (choice) 
+            {
+                case 0:
+                    System.out.println("Exiting...");
+                    sc.close();
+                    return;
+
                 case 1:
                     System.out.print("Courier ID: "); int id = sc.nextInt(); sc.nextLine();
                     System.out.print("Description: "); String desc = sc.nextLine();
@@ -52,7 +58,7 @@ public class CourierMenu {
                     System.out.print("Courier ID to view: "); int viewId = sc.nextInt(); sc.nextLine();
                     Courier c = dao.getCourierById(viewId);
                     if (c != null) {
-                        System.out.println("ID: " + c.getCourier_id() +
+                        System.out.println("ID: " + c.getCourierId() +
                                            ", Desc: " + c.getDescription() +
                                            ", Weight: " + c.getWeight() +
                                            ", Status: " + c.getStatus() +
@@ -67,16 +73,11 @@ public class CourierMenu {
                     List<Courier> list = dao.getAllCouriers();
                     System.out.println("\nAll Couriers:");
                     for (Courier co : list) {
-                        System.out.println(co.getCourier_id() + " | " + co.getDescription() +
+                        System.out.println(co.getCourierId() + " | " + co.getDescription() +
                                            " | " + co.getWeight() + " | " + co.getStatus() +
                                            " | " + co.getCustomer_id() + " | " + co.getBranch_id());
                     }
                     break;
-
-                case 0:
-                    System.out.println("Exiting...");
-                    sc.close();
-                    return;
 
                 default:
                     System.out.println("Invalid choice!");

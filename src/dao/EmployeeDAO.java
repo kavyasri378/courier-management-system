@@ -12,14 +12,16 @@ public class EmployeeDAO {
     public void addEmployee(Employee e) {
         String sql = "INSERT INTO Employee(emp_id, emp_name, role, branch_id) VALUES(?,?,?,?)";
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pst = conn.prepareStatement(sql)) {
-            pst.setInt(1, e.getEmp_id());
+             PreparedStatement pst = conn.prepareStatement(sql)) 
+        {
+            pst.setInt(1, e.getEmpId());
             pst.setString(2, e.getEmp_name());
             pst.setString(3, e.getRole());
             pst.setInt(4, e.getBranch_id());
             pst.executeUpdate();
-            System.out.println("Employee Added");
-        } catch (Exception ex) {
+            System.out.println("Employee details are Added Successfully");
+        } catch (Exception ex)
+        {
             System.out.println(ex);
         }
     }
@@ -32,11 +34,13 @@ public class EmployeeDAO {
             pst.setString(1, e.getEmp_name());
             pst.setString(2, e.getRole());
             pst.setInt(3, e.getBranch_id());
-            pst.setInt(4, e.getEmp_id());
+            pst.setInt(4, e.getEmpId());
             int rows = pst.executeUpdate();
-            if (rows > 0) System.out.println("Employee Updated");
+            if (rows > 0) System.out.println("Employee Updated successfully");
             else System.out.println("Employee not found");
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) 
+        {
             System.out.println(ex);
         }
     }
@@ -48,9 +52,11 @@ public class EmployeeDAO {
              PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, emp_id);
             int rows = pst.executeUpdate();
-            if (rows > 0) System.out.println("Employee Deleted");
+            if (rows > 0) System.out.println("Employee Deleted successfully");
             else System.out.println("Employee not found");
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) 
+        {
             System.out.println(ex);
         }
     }
@@ -64,11 +70,12 @@ public class EmployeeDAO {
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 return new Employee(rs.getInt("emp_id"),
-                                    rs.getString("emp_name"),
-                                    rs.getString("role"),
-                                    rs.getInt("branch_id"));
+                    rs.getString("emp_name"),rs.getString("role"),
+                    rs.getInt("branch_id"));
             }
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex)
+         {
             System.out.println(ex);
         }
         return null;
@@ -83,11 +90,12 @@ public class EmployeeDAO {
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 list.add(new Employee(rs.getInt("emp_id"),
-                                      rs.getString("emp_name"),
-                                      rs.getString("role"),
+                  rs.getString("emp_name"), rs.getString("role"),
                                       rs.getInt("branch_id")));
             }
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) 
+        {
             System.out.println(ex);
         }
         return list;

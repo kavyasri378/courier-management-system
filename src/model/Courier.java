@@ -1,38 +1,75 @@
 package model;
 
 public class Courier {
-    private int courier_id;
+    private int courierId;
     private String description;
     private double weight;
     private String status;
-    private int customer_id;
-    private int branch_id;
+    private int customerId;
+    private int branchId;
 
-    public Courier(int courier_id, String description, double weight, String status, int customer_id, int branch_id) {
-        this.courier_id = courier_id;
+    public Courier(int courierId, String description, double wt, String stus, int customerId, int branchId)
+     {
+        this.courierId = courierId;
         this.description = description;
-        this.weight = weight;
-        this.status = status;
-        this.customer_id = customer_id;
-        this.branch_id = branch_id;
+        this.weight = wt;
+        this.status = stus;
+        this.customerId = customerId;
+        this.branchId = branchId;
     }
 
-    // Getters & Setters
-    public int getCourier_id() { return courier_id; }
-    public void setCourier_id(int courier_id) { this.courier_id = courier_id; }
+    // Getters and Setters 
+    public int getCourierId()
+     { 
+        return courierId; 
+    }
+    public void setCourierId(int courier_id) 
+    { 
+        this.courierId = courier_id; 
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public String getDescription()
+     { 
+        return description;
+     }
+    public void setDescription(String description) 
+    { 
+        this.description = description;
+    }
 
-    public double getWeight() { return weight; }
-    public void setWeight(double weight) { this.weight = weight; }
+    public double getWeight()
+     { 
+        return weight;
+     }
+    public void setWeight(double wt) 
+    { 
+        this.weight = wt; 
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getStatus() 
+    { 
+        return status;
+     }
+    public void setStatus(String stus) 
+    { 
+        this.status = stus; 
+    }
 
-    public int getCustomer_id() { return customer_id; }
-    public void setCustomer_id(int customer_id) { this.customer_id = customer_id; }
+    public int getCustomer_id() 
+    { 
+        return customerId; 
+    }
+    public void setCustomer_id(int customer_id)
+     { 
+        this.customerId = customer_id; 
+    }
 
-    public int getBranch_id() { return branch_id; }
-    public void setBranch_id(int branch_id) { this.branch_id = branch_id; }
+    public int getBranch_id() 
+    { 
+        return branchId; 
+    }
+    public void setBranch_id(int bran_id) 
+    { 
+        this.branchId = bran_id; 
+    }
 }
