@@ -8,8 +8,8 @@ public class DBConnection {
 
     // MySQL database URL, username, password
     private static final String URL = "jdbc:mysql://localhost:3306/courierdb";
-    private static final String USER = "root";            // உங்கள் MySQL username
-    private static final String PASSWORD = "Kavya@2006Kavya";  // உங்கள் MySQL password
+    private static final String USER = "root";      
+    private static final String PASSWORD = "Kavya@2006Kavya"; 
 
     // Method to get connection
     public static Connection getConnection() {
