@@ -1,97 +1,114 @@
-# courier-management-system
-**Courier Management System (Java + MySQL)**
+**Project Name: Courier Management System**
+**1. Project Overview**
 
+The Courier Management System (CMS) is a desktop-based application built in Java with MySQL as the database backend. The system is designed to streamline courier operations, including branch management, shipment tracking, and customer service. The project demonstrates the use of OOP concepts, JDBC connectivity, and GUI components.
 
-**📌 Project Overview**
+This repository contains a partial working prototype that allows:
 
-The Courier Management System is a Java application integrated with MySQL database that helps to manage courier operations digitally. The system allows administrators and staff to handle courier booking, parcel tracking, customer records, and delivery updates efficiently. This project reduces manual work and improves service accuracy in courier companies.
+Adding, updating, and viewing branches.
 
-**✨ Features**
+Recording courier shipments and tracking status.
 
-🔑 Secure Login System (Admin/Staff)
+Managing customers and courier details.
 
-📋 Add & Manage Courier Bookings
+⚠️ Note: The system is still under development. Future versions will include full CRUD operations for all entities, reporting, and enhanced GUI.
 
-🚚 Track Parcel Status (Booked → In-Transit → Delivered)
+**2. Features Implemented (Partial Prototype)**
 
-👤 Customer Information Management
+Branch Management: Add/View/Update Branches
 
-📊 Generate Courier Reports
+Courier Management: Add/View Courier Shipments
 
-📦 Update Delivery Status
+Customer Management: Add/View Customer Details
 
-**🛠️ Technologies Used**
+Database Connectivity using JDBC
 
-Frontend: Java (Swing / AWT or JSP/Servlets)
+**3. Technologies Used
+**
+Programming Language: Java (JDK 17+)
 
-Backend: MySQL
+Database: MySQL
 
-Database Connectivity: JDBC
-
-IDE Used: Eclipse / IntelliJ IDEA / VS Code
+IDE: VS Code / IntelliJ IDEA
 
 Version Control: Git & GitHub
 
-**⚙️ Installation & Setup**
+**4. UML Diagrams**
+**4.1 Class Diagram**
++------------------+
+|      Branch      |
++------------------+
+| - branch_id: int |
+| - branch_name: String |
+| - location: String |
++------------------+
+| + getBranch_id() |
+| + setBranch_id() |
+| + getBranch_name()|
+| + setBranch_name()|
+| + getLocation()  |
+| + setLocation()  |
++------------------+
 
-Clone this repository:
++------------------+
+|     Courier      |
++------------------+
+| - courier_id: int|
+| - sender: String |
+| - receiver: String|
+| - status: String |
++------------------+
+| + getCourier_id()|
+| + setCourier_id()|
+| + getSender()   |
+| + setSender()   |
+| + getReceiver() |
+| + setReceiver() |
+| + getStatus()   |
+| + setStatus()   |
++------------------+
 
-git clone https://github.com/your-username/courier-management-system.git
++------------------+
+|     Customer     |
++------------------+
+| - customer_id: int|
+| - name: String    |
+| - phone: String   |
++------------------+
+| + getCustomer_id()|
+| + setCustomer_id()|
+| + getName()      |
+| + setName()      |
+| + getPhone()     |
+| + setPhone()     |
++------------------+
 
+**4.2 Sequence Diagram (Adding a Courier)**
+Customer -> CMS GUI : Fill Courier Details
+CMS GUI -> CourierController : sendDetails()
+CourierController -> CourierDAO : saveCourier()
+CourierDAO -> Database : INSERT INTO courier(...)
+Database -> CourierDAO : Success
+CourierDAO -> CourierController : Success
+CourierController -> CMS GUI : Show Confirmation
 
-Open the project in your IDE.
+**4.3 Use Case Diagram**
+[Customer] --> (Add Courier)
+[Customer] --> (Track Courier)
+[Admin] --> (Add Branch)
+[Admin] --> (Manage Customers)
+[Admin] --> (Update Courier Status)
 
-Create a database in MySQL:
+5. Partial Prototype Screenshot
 
-CREATE DATABASE courier_db;
+(Attach screenshot here if possible)
 
+**6. Future Enhancements**
 
-Import the provided SQL file (courier_db.sql).
+Full CRUD for all modules
 
-Update DB credentials in your Java code:
+GUI enhancement using JavaFX
 
-String url = "jdbc:mysql://localhost:3306/courier_db";
-String user = "root";
-String password = "yourpassword";
+Reporting & analytics
 
-
-**Run the project.**
-
-📂 Project Structure
-Courier-Management-System/
-│── src/
-│   ├── db/            # Database connection files
-│   ├── models/        # Java classes (Courier, Customer, etc.)
-│   ├── ui/            # UI components (Swing/Servlets)
-│   └── Main.java      # Main entry point
-│
-│── database/
-│   └── courier_db.sql # SQL script for tables
-│
-│── README.md
-
-**🎯 How It Works**
-
-Admin/Staff Login → Access system with credentials.
-
-Book Courier → Enter sender, receiver, and parcel details.
-
-Tracking System → Customers track courier using a unique tracking ID.
-
-Delivery Update → Admin/staff update status (In-transit / Delivered).
-
-Reports → Generate daily/weekly courier reports for analysis.
-
-**🔮 Future Enhancements**
-
-🌐 Online booking and payment gateway
-
-📱 Android/iOS mobile app integration
-
-📍 Real-time GPS tracking for couriers
-
-📧 Automatic Email/SMS notifications to customers
-
-👨‍💻 Author : Kavyasri D
-📧 Email: djkavyasri.1318@gmail.com
-🔗 GitHub: kavyasri378
+User authentication & role-based access
