@@ -1,114 +1,104 @@
-**Project Name: Courier Management System**
-**1. Project Overview**
+# **Courier Management System**
 
-The Courier Management System (CMS) is a desktop-based application built in Java with MySQL as the database backend. The system is designed to streamline courier operations, including branch management, shipment tracking, and customer service. The project demonstrates the use of OOP concepts, JDBC connectivity, and GUI components.
+---
 
-This repository contains a partial working prototype that allows:
+## 📋 Problem Statement
+Traditional courier companies face several issues such as:
+- Manual record keeping leading to inefficiency and errors.  
+- Difficulty in tracking parcels and delivery status.  
+- Lack of centralized branch and customer data.  
+- No structured role-based access for staff and administrators.  
 
-Adding, updating, and viewing branches.
+The **Courier Management System (CMS)** solves these issues by digitizing courier operations with modules for **Branch, Customer, and Courier shipment management**.
 
-Recording courier shipments and tracking status.
+---
 
-Managing customers and courier details.
+## 📖 Project Description
+The **Courier Management System** is a Java-based desktop application designed to manage courier operations.  
+This project demonstrates **Object-Oriented Programming concepts** and **JDBC connectivity with MySQL**.  
 
-⚠️ Note: The system is still under development. Future versions will include full CRUD operations for all entities, reporting, and enhanced GUI.
+### ✅ Current Features (Partial Prototype)
+- Branch Management (Add, View, Update branches)  
+- Courier Management (Add, View courier shipments, Track status)  
+- Customer Management (Add, View customers)  
+- Database connectivity with MySQL  
 
-**2. Features Implemented (Partial Prototype)**
+### 🚧 Under Development
+- Role-based login (Admin / Staff)  
+- Reports & analytics  
+- Enhanced GUI (JavaFX planned)  
+- Advanced error handling and validations  
 
-Branch Management: Add/View/Update Branches
+---
 
-Courier Management: Add/View Courier Shipments
+## 🛠 Tech Stack
+- **Programming Language:** Java (JDK 17+)  
+- **Database:** MySQL  
+- **Database Access:** JDBC  
+- **IDE:** VS Code / IntelliJ IDEA  
+- **Version Control:** Git & GitHub  
 
-Customer Management: Add/View Customer Details
+---
 
-Database Connectivity using JDBC
+## 🧩 Packages Details
+<img width="670" height="296" alt="image" src="https://github.com/user-attachments/assets/79dfe8a6-4e08-43f0-ae8f-d0137073a07c" />
 
-**3. Technologies Used
-**
-Programming Language: Java (JDK 17+)
 
-Database: MySQL
+---
 
-IDE: VS Code / IntelliJ IDEA
+## 🖼 UML Diagrams
 
-Version Control: Git & GitHub
+### Class Diagram
+![Class Diagram](diagrams/ClassDiagram.png)
 
-**4. UML Diagrams**
-**4.1 Class Diagram**
-+------------------+
-|      Branch      |
-+------------------+
-| - branch_id: int |
-| - branch_name: String |
-| - location: String |
-+------------------+
-| + getBranch_id() |
-| + setBranch_id() |
-| + getBranch_name()|
-| + setBranch_name()|
-| + getLocation()  |
-| + setLocation()  |
-+------------------+
+### Use Case Diagram
+![Use Case Diagram](diagrams/UseCaseDiagram.png)
 
-+------------------+
-|     Courier      |
-+------------------+
-| - courier_id: int|
-| - sender: String |
-| - receiver: String|
-| - status: String |
-+------------------+
-| + getCourier_id()|
-| + setCourier_id()|
-| + getSender()   |
-| + setSender()   |
-| + getReceiver() |
-| + setReceiver() |
-| + getStatus()   |
-| + setStatus()   |
-+------------------+
+*(Upload your PNG diagrams in a folder named `diagrams/` and use the above links.)*  
 
-+------------------+
-|     Customer     |
-+------------------+
-| - customer_id: int|
-| - name: String    |
-| - phone: String   |
-+------------------+
-| + getCustomer_id()|
-| + setCustomer_id()|
-| + getName()      |
-| + setName()      |
-| + getPhone()     |
-| + setPhone()     |
-+------------------+
+---
 
-**4.2 Sequence Diagram (Adding a Courier)**
-Customer -> CMS GUI : Fill Courier Details
-CMS GUI -> CourierController : sendDetails()
-CourierController -> CourierDAO : saveCourier()
-CourierDAO -> Database : INSERT INTO courier(...)
-Database -> CourierDAO : Success
-CourierDAO -> CourierController : Success
-CourierController -> CMS GUI : Show Confirmation
+## 🌐 Languages Used & Range
+- **Java (Core, OOP Concepts, JDBC)** – Application logic  
+- **SQL (MySQL)** – Database operations  
+- **Markdown** – Documentation (README.md)  
+- **Batch/Command Scripts** – Compile and run the project  
 
-**4.3 Use Case Diagram**
-[Customer] --> (Add Courier)
-[Customer] --> (Track Courier)
-[Admin] --> (Add Branch)
-[Admin] --> (Manage Customers)
-[Admin] --> (Update Courier Status)
+---
 
-5. Partial Prototype Screenshot
+## Project Structure
 
-(Attach screenshot here if possible)
+## 📂 Project Folder Structure
 
-**6. Future Enhancements**
+CourierManagementSystem/
+│
+├── src/
+│   ├── model/                # Entity classes
+│   │   ├── Branch.java
+│   │   ├── Courier.java
+│   │   └── Customer.java
+│   │
+│   ├── dao/                  # Data Access Objects
+│   │   ├── BranchDAO.java
+│   │   ├── CourierDAO.java
+│   │   └── CustomerDAO.java
+│   │
+│   ├── util/                 # Utilities
+│   │   └── DBConnection.java
+│   │
+│   └── main/                 # Main driver classes
+│       └── App.java
+│
+├── diagrams/                 # UML Diagrams (images)
+│   ├── ClassDiagram.png
+│   └── UseCaseDiagram.png
+│
+├── database/                 # SQL scripts
+│   └── courier_db.sql
+│
+├── bin/                      # Compiled .class files
+│
+├── README.md                 # Documentation
+├── .gitignore                # Git ignore rules
+└── run.bat / run.sh          # Script to compile & run project
 
-Full CRUD for all modules
-
-GUI enhancement using JavaFX
-
-Reporting & analytics
-
-User authentication & role-based access
