@@ -49,7 +49,8 @@ This project demonstrates **Object-Oriented Programming concepts** and **JDBC co
 ## 🖼 UML Diagrams
 
 ### Class Diagram
-![Class Diagram](diagrams/ClassDiagram.png)
+<img width="587" height="839" alt="image" src="https://github.com/user-attachments/assets/c5dab50a-e792-4cb0-9322-b13ec26209af" />
+
 
 ### Use Case Diagram
 ![Use Case Diagram](diagrams/UseCaseDiagram.png)
