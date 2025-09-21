@@ -70,35 +70,5 @@ This project demonstrates **Object-Oriented Programming concepts** and **JDBC co
 
 ## 📂 Project Folder Structure
 
-CourierManagementSystem/
-│
-├── src/
-│   ├── model/                # Entity classes
-│   │   ├── Branch.java
-│   │   ├── Courier.java
-│   │   └── Customer.java
-│   │
-│   ├── dao/                  # Data Access Objects
-│   │   ├── BranchDAO.java
-│   │   ├── CourierDAO.java
-│   │   └── CustomerDAO.java
-│   │
-│   ├── util/                 # Utilities
-│   │   └── DBConnection.java
-│   │
-│   └── main/                 # Main driver classes
-│       └── App.java
-│
-├── diagrams/                 # UML Diagrams (images)
-│   ├── ClassDiagram.png
-│   └── UseCaseDiagram.png
-│
-├── database/                 # SQL scripts
-│   └── courier_db.sql
-│
-├── bin/                      # Compiled .class files
-│
-├── README.md                 # Documentation
-├── .gitignore                # Git ignore rules
-└── run.bat / run.sh          # Script to compile & run project
+<img width="503" height="608" alt="image" src="https://github.com/user-attachments/assets/be30d47d-9630-496c-a4a8-9ef67c2981cc" />
 
