@@ -53,11 +53,8 @@ This project demonstrates **Object-Oriented Programming concepts** and **JDBC co
 
 
 ### Use Case Diagram
-![Use Case Diagram](diagrams/UseCaseDiagram.png)
+<img width="489" height="602" alt="image" src="https://github.com/user-attachments/assets/0be59568-e511-4882-941d-4706f8722b21" />
 
-*(Upload your PNG diagrams in a folder named `diagrams/` and use the above links.)*  
-
----
 
 ## 🌐 Languages Used & Range
 - **Java (Core, OOP Concepts, JDBC)** – Application logic  
